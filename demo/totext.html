@@ -2,10 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>toCommand()</title>
+<title>toText()</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="../lib/receipt.js"></script>
-<script type="text/javascript" src="../lib/receipt-printer.js"></script>
+<script type="text/javascript" src="../dist/receipt.js"></script>
 <script type="text/javascript">
 
 const transaction = {
@@ -29,17 +28,17 @@ function initialize() {
     const button = document.querySelector('button');
     const body = document.querySelector('body');
     button.onclick = async () => {
-        const receipt = Receipt.from(template, '-c 42 -p generic');
-        const command = await receipt.toCommand();
-        const div = document.createElement('div');
-        div.append(command.split('').map(c => `0${c.charCodeAt(0).toString(16)}`.slice(-2)).join(' '));
-        body.append(div);
+        const receipt = Receipt.from(template, '-c 42 -l en');
+        const text = await receipt.toText();
+        const pre = document.createElement('pre');
+        pre.append(text);
+        body.append(pre);
     };
 }
 </script>
 </head>
 <body onload="initialize()">
-<button>Command</button>
+<button>Text</button>
 <hr>
 </body>
 </html>

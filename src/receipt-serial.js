@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { Receipt } from "./receipt";
+import { Receipt } from "./receipt.js";
 
 // QR Code is a registered trademark of DENSO WAVE INCORPORATED.
 

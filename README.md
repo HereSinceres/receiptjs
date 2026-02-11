@@ -29,14 +29,28 @@ https://receiptline.github.io/receiptjs-designer/
 The details of the receipt markdown are explained at  
 https://github.com/receiptline/receiptline  
 
+# Build
+
+```bash
+npm install
+npm run build
+```
+
+# Demo (Vite)
+
+```bash
+npm run build
+npm run dev
+```
+
 # Convert to image or plain text
 
 The following files are required to use the Receipt API.  
 
-- receipt.js
+- dist/receipt.js
 
 ```html
-<script type="text/javascript" src="receipt.js"></script>
+<script type="text/javascript" src="dist/receipt.js"></script>
 ```
 
 ```javascript
@@ -135,12 +149,12 @@ The toString() instance method returns a string representing the receipt markdow
 
 The following files are required to use the Receipt Printer API.  
 
-- receipt.js
-- receipt-printer.js
+- dist/receipt.js
+- dist/receipt-printer.js
 
 ```html
-<script type="text/javascript" src="receipt.js"></script>
-<script type="text/javascript" src="receipt-printer.js"></script>
+<script type="text/javascript" src="dist/receipt.js"></script>
+<script type="text/javascript" src="dist/receipt-printer.js"></script>
 ```
 
 ```javascript
@@ -235,13 +249,13 @@ https://receiptline.github.io/receiptjs/test/tocommand.html
 
 The following files are required to use the Receipt Serial API.  
 
-- receipt.js
-- receipt-printer.js
+- dist/receipt.js
+- dist/receipt-printer.js
 - receipt-serial.js
 
 ```html
-<script type="text/javascript" src="receipt.js"></script>
-<script type="text/javascript" src="receipt-printer.js"></script>
+<script type="text/javascript" src="dist/receipt.js"></script>
+<script type="text/javascript" src="dist/receipt-printer.js"></script>
 <script type="text/javascript" src="receipt-serial.js"></script>
 ```
 
@@ -466,10 +480,10 @@ The off() instance method removes the `listener` function from the listeners arr
 
 The following files are required to use barcode/QR Code generator.  
 
-- receipt.js
+- dist/receipt.js
 
 ```html
-<script type="text/javascript" src="receipt.js"></script>
+<script type="text/javascript" src="dist/receipt.js"></script>
 ```
 
 ```javascript

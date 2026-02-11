@@ -1,4 +1,4 @@
-import { Receipt } from "./receipt";
+import { Receipt } from "./receipt.js";
 
 export async function template2Buffer(template) {
   const receipt = Receipt.from(template, "-c 42 -p escpos -l auto");

@@ -1,0 +1,38 @@
+{
+  "name": "receiptjs",
+  "version": "5.0.0",
+  "description": "JavaScript printing libraries for receipt printers",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./receipt": "./src/receipt.js",
+    "./receipt-printer": "./src/receipt-printer.js",
+    "./receipt-serial": "./src/receipt-serial.js",
+    "./receipt-usb": "./src/receipt-usb.js",
+    "./receipt2buffer": "./src/receipt2buffer.js",
+    "./browser/receipt.js": "./dist/receipt.js",
+    "./browser/receipt-printer.js": "./dist/receipt-printer.js",
+    "./browser/receipt-serial.js": "./dist/receipt-serial.js",
+    "./browser/receipt-usb.js": "./dist/receipt-usb.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dev": "vite demo",
+    "preview": "vite preview demo --strictPort --port 4173",
+    "build:browser": "esbuild src/receipt.js --bundle --format=iife --global-name=Receipt --outfile=dist/receipt.js && esbuild src/receipt-printer.js --bundle --format=iife --global-name=ReceiptPrinter --outfile=dist/receipt-printer.js && esbuild src/receipt-serial.js --bundle --format=iife --global-name=ReceiptSerial --outfile=dist/receipt-serial.js && esbuild src/receipt-usb.js --bundle --format=iife --global-name=ReceiptUsb --outfile=dist/receipt-usb.js",
+    "build": "npm run build:browser"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.2",
+    "vite": "^5.4.11"
+  }
+}
